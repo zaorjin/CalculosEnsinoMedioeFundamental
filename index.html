@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Cálculos Ensino Médio/Fundamental</title>
+		<link rel="stylesheet" type="text/css" href="style.css" /> 
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>	
+		<script src="./script.js"></script>
+		
+	</head>
+	<body>
+	<h1 class="titulo">Selecione uma opção:</h1>
+        <button class="Select" id="Selectcc" onclick="ShowCC()">Cálculadora Científica</button>
+        <button class="Select" id="Selectbhaskara" onclick="ShowBhaskara()">Bhaskara</button>
+        <button class="Select" id="Selectmmc" onclick="ShowM3()">Matriz 3x3</button>
+		<button class="Select" id="Selectregra3" onclick="ShowRegra3()">Regra de 3 Simples</button>
+		<button class="Select" id="Selectareas" onclick="ShowAreas()">Cálculo de Areas</button>
+		<button class="Select" id="Selectconverto" onclick="ShowConvertor()">Convertor de Unidade</button>
+<!-----------------------CALCULADORA ------------------------------>
+	<div class="div1" style="visibility: hidden;">
+	<h1 class="calculadora" >Numero (1): <input type="text" id="num1"><br>
+		Numero (2): <input type="text" id="num2"><br></h1>
+
+		<p> Operações basicas</p>&ensp;
+		<button class="bcc" onclick="mais()">+</button>		
+		<button class="bcc" onclick="menos()">-</button>		
+		<button class="bcc" onclick="vezes()">*</button>		
+		<button class="bcc" onclick="dividir()">/</button><br>
+
+		<p> Numero (1) elevado ao numero (2)</p>&ensp;		
+		<button class="bcc" onclick="expoente()">x^y</button><br>
+		
+		<p>Raiz em relação ao  numero (1)</p>&ensp;	
+		<button class="bcc" onclick="raiz()">Raiz</button>
+		<select id="raiz">	<!--Opçao de raiz qudrada ou cubica--->
+			<option>2</option>
+			<option>3</option>
+		</select><br>
+		
+		<p>Logaritmo de (1) na base (2)</p>&ensp;
+		<button class="bcc" onclick="log()">log</button><br>
+		
+		<p>Seno, Tang, Cos do numero(1)</p>&ensp;
+		<button class="bcc" onclick="sin()">Sen</button>
+		<button class="bcc" onclick="tan()">Tan</button>
+		<button class="bcc" onclick="cos()">Cos</button>
+		<select id="trigono">	<!--Opçao de Degrees ou Radianos--->
+			<option>Deg</option>
+			<option>Rad</option>
+		</select><br>
+		
+	<h1 class="calculadora">Resultado: <input type="text" id="num3"><br></h1>
+	</div>
+<!-----------------------CODIGO DE BHASKARA-------------------->
+	<div class="div2" style="visibility: hidden;"><h1> Bhaskara</h1>&ensp;
+		Numero (a): <input type="text" id="bas1">
+		Numero (b): <input type="text" id="bas2">
+		Numero (c): <input type="text" id="bas3">&ensp;<br><br>
+		
+		&ensp;<button class="bbhask" onclick="bhaskara()">Calcular</button>
+		
+		Primeira Raiz:<input type="text" id="basx1">
+		Segunda Raiz:<input type="text" id="basx2"><br><br><br>
+		
+		&ensp;Concavidade:<input type="text" id="bas4"><br><br>
+	</div>
+<!-----------------------CODIGO MATRIZ 3X3-------------------->
+	<div class="div3" style="visibility: hidden;"><h1>MATRIZ</h1>
+		a: <input type="text" id="ma"> b: <input type="text" id="mb"> c: <input type="text" id="mc"><br>
+		d: <input type="text" id="md"> e: <input type="text" id="me"> f: <input type="text" id="mf"><br>
+		g: <input type="text" id="mg"> h: <input type="text" id="mh"> i: <input type="text" id="mi"><br><br>
+		<button class="bmatriz" onclick="matriz()">Calcular</button><br>
+		Determinante:<br><input type="text" id="det"><br><br>
+	</div>
+<!-----------------------CODIGO REGRA DE TRES-------------------->	
+	<div class="div4" style="visibility: hidden;"><h1>Regra de 3 Simples</h1>
+&ensp;	a: <input type="text" id="regra1">&emsp;&emsp;&emsp;&nbsp;
+		b: <input type="text" id="regra2">&ensp;<br><br>
+&ensp;	c: <input type="text" id="regra3">
+		Resultado: <input type="text" id="regra4">&ensp;<br><br>
+		<button class="bregra" onclick="regra()">Calcular</button><br><br>
+		</div>
+<!-----------------------CODIGO DAS AREAS-------------------->			
+		<div class="div5" style="visibility: hidden;"><h1>Cálculo das Áreas</h1>
+		<p>Area do Circulo</P>
+		Raio: <input type="text" id="area1">
+		<button class="bareas" onclick="circulo()">Calcular</button><br>
+		
+		<p>Area do Quadrado</P>
+		Lado: <input type="text" id="area2">
+		<button class="bareas" onclick="quadrado()">Calcular</button><br>
+		
+		<p>Area do Retângulo</P>
+		Lado Maior: <input type="text" id="area3">
+		Lado Menor: <input type="text" id="area4">
+		<button class="bareas" onclick="retangulo()">Calcular</button><br>
+		
+		<p>Area do Triângulo</P>
+		Base: <input type="text" id="area5">
+		Altura: <input type="text" id="area6">
+		<button class="bareas" onclick="triangulo()">Calcular</button><br>
+		
+		<p>Area do Pentágono</P>
+		Lado: <input type="text" id="area7">
+		<button class="bareas" onclick="pentagono()">Calcular</button><br>
+		
+		<p>Area do Hexágono</P>
+		Lado: <input type="text" id="area8">
+		<button class="bareas" onclick="hexagono()">Calcular</button><br>
+		
+		<p>Area do Polígono Regular</P>
+		Quantidade de Lados: <input type="text" id="area9">
+		Lado: <input type="text" id="area10">
+		<button class="bareas" onclick="poligono()">Calcular</button><br>
+		
+		<p>Area do Losango</P>
+		Diagonal 1: <input type="text" id="area11">
+		Diagonal 2: <input type="text" id="area12">
+		<button class="bareas" onclick="losango()">Calcular</button><br>
+		
+		<p>Area do Trapézio</P>
+&ensp;	Base Maior: <input type="text" id="area13">
+		Base Menor: <input type="text" id="area14">
+		Altura: <input type="text" id="area15">
+		<button class="bareas" onclick="trapezio()">Calcular</button>&ensp;<br><br>
+		<h1>RESULTADO: <input type="text" id="area16"></h1><br><br>
+		</div>
+		
+<!-----------------------CODIGO CONVERTOR DE UNIDADES-------------------->				
+		<div class="div6" style="visibility: hidden;"><h1>Convertor de Unidades</h1>
+			Valor:<input type="text" id="convertor">
+			<select id="unidade">
+			<option>M</option>
+			<option>KM</option>
+			<option>HM</option>
+			<option>DAM</option>
+			<option>DM</option>
+			<option>CM</option>
+			<option>MM</option></select><br><br>
+			<button class="bconvertor" onclick="convertor()">Calcular</button><br><br>
+			KM:<br> <input type="text" id="rkm"></input><br>
+			HM:<br> <input type="text" id="rhm"></input><br>
+			DAM:<br><input type="text" id="rdam"></input><br>
+			M:<br>  <input type="text" id="rm"></input><br>
+			DM:<br> <input type="text" id="rdm"></input><br>
+			CM:<br> <input type="text" id="rcm"></input><br>
+			MM:<br> <input type="text" id="rmm"></input><br><br>
+		</div>
+	</body>
+</html>
