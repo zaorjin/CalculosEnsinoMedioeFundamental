@@ -137,7 +137,7 @@
 					$("#num3").val(r);
 				}
 			}
-/*--------------------- MINIMO MULTIPLO COMUM ---------------------------------------------------------		TENTATIVA FRUSTADA DE FAZER UM MMC ! 
+/*--------------------- MINIMO MULTIPLO COMUM --------------------	TENTATIVA FRUSTADA DE FAZER UM MMC, COLOQUEI MATRIZ3X3 PARA MÃO DEIXAR EM BRANCO ! 
 			function mmc(){
 				var n1=1, n2=1, n3=1, n4=1, n5=1, cont1=1;
 				n1 = parseInt($("#mc1").val())
